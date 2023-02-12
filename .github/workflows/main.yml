@@ -2,7 +2,7 @@ name: Build React on S3
 on:
   push:
       branches:
-        - master
+        - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
 
       - name: Deploy  # S3にデプロイ 
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
         run: |
           aws s3 cp --recursive --region ap-northeast-1 build s3://ootatatuya-no-homepage.net
