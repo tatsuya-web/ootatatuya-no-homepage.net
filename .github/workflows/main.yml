@@ -8,7 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+<<<<<<< HEAD
         uses: actions/checkout@main
+=======
+        uses: actions/checkout@main # リポジトリをチェックアウト
+>>>>>>> fde37f0184de8ff2636e0fdc8a621cdd0e773891
 
       - name: Install Dependencies
         run: npm install
