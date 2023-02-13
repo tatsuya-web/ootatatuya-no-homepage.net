@@ -1,26 +1,23 @@
 name: Build React on S3
 on:
   push:
-      branches:
-        - main
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-<<<<<<< HEAD
-        uses: actions/checkout@main
-=======
+
         uses: actions/checkout@main # リポジトリをチェックアウト
->>>>>>> fde37f0184de8ff2636e0fdc8a621cdd0e773891
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build
-        run: npm run build  # React ビルド
+        run: npm run build # React ビルド
 
-      - name: Deploy  # S3にデプロイ 
+      - name: Deploy # S3にデプロイ
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
